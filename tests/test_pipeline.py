@@ -45,6 +45,17 @@ class PipelineTests(unittest.TestCase):
             self.assertTrue(any("no readable text" in x for x in bundle.audit_log))
             self.assertIn("OCR", bundle.sections[0].objective)
 
+
+    def test_html_escapes_script_end_tag(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp) / "lesson.txt"
+            out = Path(tmp) / "out"
+            source.write_text("analysis </script> chart", encoding="utf-8")
+            convert_pdf_to_teaching_system(source, out)
+            html = (out / "index.html").read_text(encoding="utf-8")
+            self.assertIn("<script id='bundle-data' type='application/json'>", html)
+            self.assertIn(r"<\/script>", html)
+
     def test_web_html_wrapper(self):
         page = _html_page("<h1>ok</h1>").decode("utf-8")
         self.assertIn("Schenker 教材转换器", page)

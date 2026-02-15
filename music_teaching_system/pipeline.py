@@ -81,7 +81,7 @@ def _build_sections(pdf_text_pages: list[tuple[int, str]]) -> tuple[list[LessonS
 
 
 def _build_html(bundle: TeachingSystemBundle) -> str:
-    payload = json.dumps(bundle.to_dict(), ensure_ascii=False)
+    payload = json.dumps(bundle.to_dict(), ensure_ascii=False).replace("</", "<\\/")
     return f"""<!doctype html>
 <html lang='zh-CN'>
 <head>
@@ -94,6 +94,7 @@ def _build_html(bundle: TeachingSystemBundle) -> str:
     .card {{ background:#1e293b; border-radius: 12px; padding: 16px; margin-bottom: 16px; }}
     button {{ background:#22c55e; border:0; padding:8px 12px; border-radius:8px; cursor:pointer; }}
     pre {{ white-space: pre-wrap; }}
+    .error {{ border: 1px solid #ef4444; color: #fecaca; }}
   </style>
 </head>
 <body>
@@ -102,9 +103,25 @@ def _build_html(bundle: TeachingSystemBundle) -> str:
   <p>支持审计日志追踪、章节浏览、乐句播放（示例音频）与分析证据查看。</p>
   <div id='app'></div>
 </div>
+<script id='bundle-data' type='application/json'>{payload}</script>
 <script>
-const bundle = {payload};
 const app = document.getElementById('app');
+
+function showError(message) {{
+  const err = document.createElement('div');
+  err.className = 'card error';
+  err.textContent = message;
+  app.appendChild(err);
+}}
+
+function escapeHtml(value) {{
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}}
 
 function beep() {{
   const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -116,26 +133,70 @@ function beep() {{
   setTimeout(() => osc.stop(), 180);
 }}
 
-bundle.sections.forEach(section => {{
-  const div = document.createElement('div');
-  div.className = 'card';
-  const measures = (section.measures || []).map(m => `<li>#${{m.index}} ${{m.notation}}</li>`).join('');
-  const insights = (section.insights || []).map(i => `<li><b>${{i.title}}</b>：${{i.description}}</li>`).join('');
-  div.innerHTML = `
-    <h3>${{section.title}}</h3>
-    <p>目标：${{section.objective}}</p>
-    ${{measures ? `<h4>可演奏片段</h4><ul>${{measures}}</ul>` : ''}}
-    ${{insights ? `<h4>分析洞见</h4><ul>${{insights}}</ul>` : ''}}
-    <button>▶ 试听示例</button>
-  `;
-  div.querySelector('button')?.addEventListener('click', beep);
-  app.appendChild(div);
-}});
+try {{
+  const raw = document.getElementById('bundle-data')?.textContent || '{{}}';
+  const bundle = JSON.parse(raw);
 
-const audit = document.createElement('div');
-audit.className = 'card';
-audit.innerHTML = `<h3>审计日志</h3><pre>${{bundle.audit_log.join('\n')}}</pre>`;
-app.appendChild(audit);
+  (bundle.sections || []).forEach((section) => {{
+    const div = document.createElement('div');
+    div.className = 'card';
+
+    const title = document.createElement('h3');
+    title.textContent = section.title || '未命名章节';
+    div.appendChild(title);
+
+    const objective = document.createElement('p');
+    objective.textContent = `目标：${{section.objective || ''}}`;
+    div.appendChild(objective);
+
+    if ((section.measures || []).length) {{
+      const h = document.createElement('h4');
+      h.textContent = '可演奏片段';
+      div.appendChild(h);
+
+      const ul = document.createElement('ul');
+      (section.measures || []).forEach((m) => {{
+        const li = document.createElement('li');
+        li.innerHTML = `#${{escapeHtml(m.index)}} ${{escapeHtml(m.notation || '')}}`;
+        ul.appendChild(li);
+      }});
+      div.appendChild(ul);
+    }}
+
+    if ((section.insights || []).length) {{
+      const h = document.createElement('h4');
+      h.textContent = '分析洞见';
+      div.appendChild(h);
+
+      const ul = document.createElement('ul');
+      (section.insights || []).forEach((i) => {{
+        const li = document.createElement('li');
+        li.innerHTML = `<b>${{escapeHtml(i.title || '')}}</b>：${{escapeHtml(i.description || '')}}`;
+        ul.appendChild(li);
+      }});
+      div.appendChild(ul);
+    }}
+
+    const btn = document.createElement('button');
+    btn.textContent = '▶ 试听示例';
+    btn.addEventListener('click', beep);
+    div.appendChild(btn);
+
+    app.appendChild(div);
+  }});
+
+  const audit = document.createElement('div');
+  audit.className = 'card';
+  const h = document.createElement('h3');
+  h.textContent = '审计日志';
+  audit.appendChild(h);
+  const pre = document.createElement('pre');
+  pre.textContent = (bundle.audit_log || []).join('\n');
+  audit.appendChild(pre);
+  app.appendChild(audit);
+}} catch (error) {{
+  showError(`页面渲染失败：${{error}}`);
+}}
 </script>
 </body>
 </html>

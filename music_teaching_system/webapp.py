@@ -92,16 +92,18 @@ class UploadHandler(BaseHTTPRequestHandler):
 
         safe_name = Path(file_item.filename).name
         timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-        job_id = f"{timestamp}-{safe_name.replace(' ', '_')}"
+        safe_stem = Path(safe_name).stem.replace(' ', '_')
+        safe_suffix = Path(safe_name).suffix.lower()
+        job_id = f"{timestamp}-{safe_stem}"
 
         UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
         OUTPUT_ROOT.mkdir(parents=True, exist_ok=True)
 
-        upload_path = UPLOAD_DIR / job_id
+        upload_path = UPLOAD_DIR / f"{job_id}{safe_suffix}"
         with upload_path.open("wb") as f:
             shutil.copyfileobj(file_item.file, f)
 
-        output_dir = OUTPUT_ROOT / job_id
+        output_dir = OUTPUT_ROOT / Path(upload_path).stem
         bundle = convert_pdf_to_teaching_system(upload_path, output_dir)
 
         summary = {
@@ -117,8 +119,8 @@ class UploadHandler(BaseHTTPRequestHandler):
 <div class='card'>
   <p><b>教材：</b>{html.escape(bundle.title)}</p>
   <p><b>章节数：</b>{len(bundle.sections)}，<b>审计日志：</b>{len(bundle.audit_log)}</p>
-  <p><a href='/outputs/{job_id}/index.html' target='_blank'>打开互动教学页面</a></p>
-  <p><a href='/outputs/{job_id}/bundle.json' target='_blank'>查看 bundle.json</a></p>
+  <p><a href='/outputs/{Path(upload_path).stem}/index.html' target='_blank'>打开互动教学页面</a></p>
+  <p><a href='/outputs/{Path(upload_path).stem}/bundle.json' target='_blank'>查看 bundle.json</a></p>
 </div>
 <div class='card'>
   <h3>转换摘要</h3>

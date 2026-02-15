@@ -32,9 +32,20 @@ def _parse_with_pypdf(path: Path) -> ParsedPDF:
     from pypdf import PdfReader  # type: ignore
 
     reader = PdfReader(str(path))
-    pages = []
-    for idx, page in enumerate(reader.pages, start=1):
-        pages.append(ExtractedPage(page=idx, text=page.extract_text() or ""))
+    pages = [ExtractedPage(page=idx, text=page.extract_text() or "") for idx, page in enumerate(reader.pages, start=1)]
+    return ParsedPDF(title=path.stem, pages=pages)
+
+
+def _parse_text_fallback(path: Path) -> ParsedPDF:
+    raw = path.read_bytes().decode("utf-8", errors="ignore")
+    if path.suffix.lower() == ".pdf":
+        printable_ratio = (sum(ch.isprintable() for ch in raw) / max(len(raw), 1))
+        if printable_ratio < 0.8:
+            # Likely binary PDF bytes without successful text extraction.
+            return ParsedPDF(title=path.stem, pages=[ExtractedPage(page=1, text="")])
+
+    segments = [s.strip() for s in raw.split("\f") if s.strip()] or [raw]
+    pages = [ExtractedPage(page=i + 1, text=text) for i, text in enumerate(segments)]
     return ParsedPDF(title=path.stem, pages=pages)
 
 
@@ -48,17 +59,13 @@ def parse_pdf(pdf_path: str | Path) -> ParsedPDF:
     """
 
     path = Path(pdf_path)
-
     for parser in (_parse_with_pymupdf, _parse_with_pypdf):
         try:
             return parser(path)
         except Exception:
             continue
 
-    raw = path.read_text(encoding="utf-8", errors="ignore")
-    segments = [s.strip() for s in raw.split("\f") if s.strip()] or [raw]
-    pages = [ExtractedPage(page=i + 1, text=text) for i, text in enumerate(segments)]
-    return ParsedPDF(title=path.stem, pages=pages)
+    return _parse_text_fallback(path)
 
 
 def classify_page(text: str) -> str:

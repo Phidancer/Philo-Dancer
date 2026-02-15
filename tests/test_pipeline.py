@@ -35,6 +35,16 @@ class PipelineTests(unittest.TestCase):
         text = "SHEET staff measure 1 with harmony analysis chart"
         self.assertEqual(classify_page(text), "hybrid")
 
+
+    def test_binary_pdf_fallback_has_ocr_hint(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp) / "scan.pdf"
+            out = Path(tmp) / "out"
+            source.write_bytes(b"%PDF-1.7\x00\x01\x02\x03\xff\xfe")
+            bundle = convert_pdf_to_teaching_system(source, out)
+            self.assertTrue(any("no readable text" in x for x in bundle.audit_log))
+            self.assertIn("OCR", bundle.sections[0].objective)
+
     def test_web_html_wrapper(self):
         page = _html_page("<h1>ok</h1>").decode("utf-8")
         self.assertIn("Schenker 教材转换器", page)

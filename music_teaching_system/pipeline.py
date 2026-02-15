@@ -11,9 +11,13 @@ def _build_sections(pdf_text_pages: list[tuple[int, str]]) -> tuple[list[LessonS
     sections: list[LessonSection] = []
     audit: list[str] = []
 
+    non_empty_pages = 0
     for page_number, text in pdf_text_pages:
+        if text.strip():
+            non_empty_pages += 1
+
         page_type = classify_page(text)
-        audit.append(f"page={page_number} classified_as={page_type}")
+        audit.append(f"page={page_number} classified_as={page_type} chars={len(text.strip())}")
 
         if page_type in {"sheetmusic", "hybrid"}:
             measures = []
@@ -58,11 +62,16 @@ def _build_sections(pdf_text_pages: list[tuple[int, str]]) -> tuple[list[LessonS
             )
 
     if not sections:
+        objective = "未识别到乐谱/图表关键词，已生成基础课程壳。"
+        if non_empty_pages == 0:
+            objective = "未提取到可读文本（常见于扫描版 PDF）。请先进行 OCR 再上传，或安装可用 PDF 解析依赖。"
+            audit.append("warning: no readable text extracted from source")
+
         sections.append(
             LessonSection(
                 id="fallback-1",
                 title="自动导入内容",
-                objective="未识别到乐谱/图表关键词，已生成基础课程壳。",
+                objective=objective,
                 measures=[ScoreMeasure(index=1, notation="请补充人工校对后的乐谱片段")],
             )
         )

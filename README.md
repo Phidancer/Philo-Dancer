@@ -1,48 +1,53 @@
-# ARC-AGI 2 Dataset Exploration Framework
+# Schenker Composer
 
-A comprehensive analysis framework for exploring the 1,000 training tasks in the ARC-AGI 2 (Abstraction and Reasoning Corpus - Artificial General Intelligence) dataset. This toolkit provides deep insights into visual reasoning patterns, transformations, and cognitive primitives required for solving these puzzles.
+Schenker Composer is a full-stack web app for exploring layered generative composition for two voices:
 
-## 🎯 Overview
+- Background → Middleground → Foreground → Surface pipeline
+- Step-by-step artifact generation with audit trails
+- Validation reports (interruption, bassbrechung, harmony-urlinie, counterpoint)
+- MIDI + MusicXML export
 
-The ARC-AGI 2 dataset contains 1,000 unique visual reasoning tasks that challenge both humans and AI systems. This framework provides:
+## Stack
 
-- **Pattern Recognition**: Identifies spatial patterns, symmetries, and transformations
-- **Task Categorization**: Classifies tasks by complexity and cognitive requirements  
-- **Statistical Analysis**: Comprehensive data insights and correlations
-- **Visualization Suite**: Interactive charts, grids, and analysis dashboards
-- **Human Performance Analysis**: Studies solving patterns and success rates
-- **Report Generation**: Detailed analysis summaries and recommendations
+- **Backend**: FastAPI, Pydantic, Celery, Redis
+- **Frontend**: Next.js (App Router), TypeScript
+- **Rendering**: mido (MIDI), MusicXML snapshot export
 
-## 🚀 Quick Start
-
-### Installation
+## Run with Docker
 
 ```bash
-# Clone the repository
-git clone https://github.com/Phidancer/philo-dancer.git
-cd philo-dancer
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Download ARC-AGI 2 dataset (if not already available)
-python scripts/download_dataset.py
+docker compose up --build
 ```
 
-### Basic Usage
+- Web UI: `http://localhost:3000`
+- API: `http://localhost:8000`
 
-```python
-from arc_agi_framework import DataLoader, PatternAnalyzer, Visualizer
+## API
 
-# Load dataset
-loader = DataLoader()
-tasks = loader.load_training_data()
+- `POST /projects`
+- `POST /projects/{id}/generate/step/{n}`
+- `GET /projects/{id}/artifacts/latest`
+- `POST /projects/{id}/render/midi`
+- `POST /projects/{id}/render/musicxml`
+- `POST /projects/{id}/play/preview`
 
-# Analyze patterns
-analyzer = PatternAnalyzer()
-patterns = analyzer.analyze_all_tasks(tasks)
+## Auditable artifacts
 
-# Generate visualizations
-viz = Visualizer()
-viz.create_analysis_dashboard(patterns)
+Every generation step is immutable JSON at:
+
+```text
+artifacts/{project_id}/{timestamp}/step_n.json
 ```
+
+Each artifact includes seed, ruleset hash, version, and transformation explanation log.
+
+## Testing
+
+```bash
+pip install -r api/requirements.txt
+pytest api/tests
+```
+
+## Reference
+
+The Schenkerian notation reference is expected at `docs/SchenkerGUIDE.pdf`.

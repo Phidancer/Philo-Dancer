@@ -1,0 +1,128 @@
+{
+  "project_id": "sample_project",
+  "step": 3,
+  "created_at": "2026-02-15T18:52:49.288949Z",
+  "version": "0.1.0",
+  "ruleset_hash": "99e06e938cf0",
+  "explanation_log": [
+    "Step B/C: mapped interruption form (8+8) and harmonic pillars.",
+    "Step B/C: mapped interruption form (8+8) and harmonic pillars.",
+    "Step D/E: injected two-voice voice-leading ornaments."
+  ],
+  "meta": {
+    "key": "d minor",
+    "bars": 16,
+    "meter": "4/4",
+    "style": "Bach 2-voice",
+    "seed": 1729
+  },
+  "background": {
+    "urlinie_targets": [
+      {
+        "degree": 3,
+        "bar": 1
+      },
+      {
+        "degree": 2,
+        "bar": 8
+      },
+      {
+        "degree": 3,
+        "bar": 9,
+        "return": true
+      },
+      {
+        "degree": 1,
+        "bar": 16
+      }
+    ],
+    "bassbrechung_pillars": [
+      {
+        "rn": "i",
+        "bar": 1,
+        "layer": "background"
+      },
+      {
+        "rn": "V",
+        "bar": 8,
+        "layer": "background"
+      },
+      {
+        "rn": "i",
+        "bar": 16,
+        "layer": "background"
+      }
+    ],
+    "interruption": {
+      "enabled": true,
+      "at_bar": 8,
+      "notation": "2^/V // broken_beam"
+    }
+  },
+  "middleground": {
+    "harmonic_pillars": [
+      {
+        "bar": 1,
+        "rn": "i"
+      },
+      {
+        "bar": 4,
+        "rn": "iv"
+      },
+      {
+        "bar": 8,
+        "rn": "V"
+      },
+      {
+        "bar": 9,
+        "rn": "i"
+      },
+      {
+        "bar": 12,
+        "rn": "iiø6"
+      },
+      {
+        "bar": 16,
+        "rn": "V-i"
+      }
+    ],
+    "phrase_mapping": [
+      {
+        "range": "1-8",
+        "cadence": "HC"
+      },
+      {
+        "range": "9-16",
+        "cadence": "PAC"
+      }
+    ]
+  },
+  "foreground": {
+    "ornaments": [
+      {
+        "type": "passing",
+        "bar": 2
+      },
+      {
+        "type": "neighbor",
+        "bar": 6
+      },
+      {
+        "type": "suspension_4_3",
+        "bar": 15
+      }
+    ],
+    "texture_policy": {
+      "pattern": "continuous_16ths",
+      "imitation_delay": "1 beat"
+    }
+  },
+  "surface": {
+    "events": [],
+    "musicxml_snapshot": ""
+  },
+  "validation": {
+    "passed": true,
+    "issues": []
+  }
+}

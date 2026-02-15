@@ -1,0 +1,1169 @@
+{
+  "project_id": "0b0d91b8-b216-461e-b93b-78df66bb38d9",
+  "step": 6,
+  "created_at": "2026-02-15T18:52:44.872755Z",
+  "version": "0.1.0",
+  "ruleset_hash": "99e06e938cf0",
+  "explanation_log": [
+    "Step B/C: mapped interruption form (8+8) and harmonic pillars.",
+    "Step B/C: mapped interruption form (8+8) and harmonic pillars.",
+    "Step D/E: injected two-voice voice-leading ornaments.",
+    "Step B/C: mapped interruption form (8+8) and harmonic pillars.",
+    "Step D/E: injected two-voice voice-leading ornaments.",
+    "Step F: rendered surface events for audio/export.",
+    "Step B/C: mapped interruption form (8+8) and harmonic pillars.",
+    "Step D/E: injected two-voice voice-leading ornaments.",
+    "Step F: rendered surface events for audio/export.",
+    "Step B/C: mapped interruption form (8+8) and harmonic pillars.",
+    "Step D/E: injected two-voice voice-leading ornaments.",
+    "Step F: rendered surface events for audio/export."
+  ],
+  "meta": {
+    "key": "d minor",
+    "bars": 16,
+    "meter": "4/4",
+    "style": "Bach 2-voice",
+    "seed": 1729
+  },
+  "background": {
+    "urlinie_targets": [
+      {
+        "degree": 3,
+        "bar": 1
+      },
+      {
+        "degree": 2,
+        "bar": 8
+      },
+      {
+        "degree": 3,
+        "bar": 9,
+        "return": true
+      },
+      {
+        "degree": 1,
+        "bar": 16
+      }
+    ],
+    "bassbrechung_pillars": [
+      {
+        "rn": "i",
+        "bar": 1,
+        "layer": "background"
+      },
+      {
+        "rn": "V",
+        "bar": 8,
+        "layer": "background"
+      },
+      {
+        "rn": "i",
+        "bar": 16,
+        "layer": "background"
+      }
+    ],
+    "interruption": {
+      "enabled": true,
+      "at_bar": 8,
+      "notation": "2^/V // broken_beam"
+    }
+  },
+  "middleground": {
+    "harmonic_pillars": [
+      {
+        "bar": 1,
+        "rn": "i"
+      },
+      {
+        "bar": 4,
+        "rn": "iv"
+      },
+      {
+        "bar": 8,
+        "rn": "V"
+      },
+      {
+        "bar": 9,
+        "rn": "i"
+      },
+      {
+        "bar": 12,
+        "rn": "iiø6"
+      },
+      {
+        "bar": 16,
+        "rn": "V-i"
+      }
+    ],
+    "phrase_mapping": [
+      {
+        "range": "1-8",
+        "cadence": "HC"
+      },
+      {
+        "range": "9-16",
+        "cadence": "PAC"
+      }
+    ]
+  },
+  "foreground": {
+    "ornaments": [
+      {
+        "type": "passing",
+        "bar": 2
+      },
+      {
+        "type": "neighbor",
+        "bar": 6
+      },
+      {
+        "type": "suspension_4_3",
+        "bar": 15
+      }
+    ],
+    "texture_policy": {
+      "pattern": "continuous_16ths",
+      "imitation_delay": "1 beat"
+    }
+  },
+  "surface": {
+    "events": [
+      {
+        "pitch": 63,
+        "start": 0.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 0.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 64,
+        "start": 1.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 1.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 65,
+        "start": 2.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 2.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 66,
+        "start": 3.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 3.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 64,
+        "start": 4.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 4.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 65,
+        "start": 5.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 5.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 66,
+        "start": 6.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 6.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 62,
+        "start": 7.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 7.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 65,
+        "start": 8.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 8.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 66,
+        "start": 9.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 9.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 62,
+        "start": 10.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 10.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 63,
+        "start": 11.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 11.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 66,
+        "start": 12.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 12.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 62,
+        "start": 13.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 13.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 63,
+        "start": 14.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 14.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 64,
+        "start": 15.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 15.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 62,
+        "start": 16.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 16.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 63,
+        "start": 17.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 17.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 64,
+        "start": 18.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 18.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 65,
+        "start": 19.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 19.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 63,
+        "start": 20.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 20.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 64,
+        "start": 21.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 21.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 65,
+        "start": 22.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 22.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 66,
+        "start": 23.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 23.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 64,
+        "start": 24.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 24.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 65,
+        "start": 25.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 25.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 66,
+        "start": 26.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 26.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 62,
+        "start": 27.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 27.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 65,
+        "start": 28.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 28.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 66,
+        "start": 29.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 29.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 62,
+        "start": 30.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 30.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 63,
+        "start": 31.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 31.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 66,
+        "start": 32.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 32.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 62,
+        "start": 33.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 33.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 63,
+        "start": 34.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 34.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 64,
+        "start": 35.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 35.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 62,
+        "start": 36.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 36.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 63,
+        "start": 37.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 37.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 64,
+        "start": 38.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 38.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 65,
+        "start": 39.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 39.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 63,
+        "start": 40.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 40.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 64,
+        "start": 41.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 41.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 65,
+        "start": 42.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 42.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 66,
+        "start": 43.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 43.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 64,
+        "start": 44.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 44.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 65,
+        "start": 45.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 45.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 66,
+        "start": 46.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 46.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 62,
+        "start": 47.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 47.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 65,
+        "start": 48.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 48.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 66,
+        "start": 49.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 49.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 62,
+        "start": 50.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 50.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 63,
+        "start": 51.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 51.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 66,
+        "start": 52.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 52.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 62,
+        "start": 53.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 53.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 63,
+        "start": 54.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 54.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 64,
+        "start": 55.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 55.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 62,
+        "start": 56.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 56.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 63,
+        "start": 57.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 57.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 64,
+        "start": 58.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 53,
+        "start": 58.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 65,
+        "start": 59.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 51,
+        "start": 59.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 63,
+        "start": 60.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 60.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 64,
+        "start": 61.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 61.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 65,
+        "start": 62.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 50,
+        "start": 62.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      },
+      {
+        "pitch": 66,
+        "start": 63.0,
+        "duration": 0.95,
+        "velocity": 88,
+        "layer": "surface",
+        "voice": "upper"
+      },
+      {
+        "pitch": 52,
+        "start": 63.0,
+        "duration": 0.95,
+        "velocity": 72,
+        "layer": "surface",
+        "voice": "lower"
+      }
+    ],
+    "musicxml_snapshot": "<score-partwise version='4.0'></score-partwise>"
+  },
+  "validation": {
+    "passed": false,
+    "issues": [
+      {
+        "validator": "counterpoint",
+        "severity": "error",
+        "message": "Potential parallel perfect interval detected.",
+        "location": "beat 8.0"
+      }
+    ]
+  }
+}

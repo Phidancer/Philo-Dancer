@@ -1,0 +1,18 @@
+services:
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+  api:
+    build: ./api
+    volumes:
+      - ./:/app_root
+    ports: ["8000:8000"]
+    depends_on: [redis]
+  worker:
+    build: ./api
+    command: celery -A app.worker.celery_app worker --loglevel=info
+    depends_on: [redis]
+  web:
+    build: ./web
+    ports: ["3000:3000"]
+    depends_on: [api]
